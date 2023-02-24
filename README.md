@@ -1,4 +1,4 @@
-This is a lambda function that takes what's uploaded in a form's <input type="file" name="img1"> and stores the files, which will be images, in s3. There are several file upload fields. I check if the file name exists in the s3 bucket. If it exists, using a while loop I increment the file name until it doesn't exist.
+This is a lambda function that takes what's uploaded in a form's `<input type="file" name="img1">` and stores the files, which will be images, in s3. There are several file upload fields. I check if the file name exists in the s3 bucket. If it exists, using a while loop I increment the file name until it doesn't exist.
 
 The function runs in a Node.js environment.
 
