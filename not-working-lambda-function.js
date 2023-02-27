@@ -82,7 +82,7 @@ exports.handler = async (event) => {
         await s3Client.send(new UploadCommand(s3Params));
         return url;
       } catch (err) {
-        console.log(`failed upload 1: ${err}`);
+        console.log(`failed upload 2: ${err}`);
         response.body = JSON.stringify({
           message: "File failed to upload 2",
           errorMessage: err.message,
