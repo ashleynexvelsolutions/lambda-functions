@@ -56,11 +56,12 @@ exports.handler = async (event) => {
           );
         } catch (err) {
           if (err.name === "NoSuchKey") {
+            console.log(`No such key: ${err}`);
             fileExists = false;
           } else {
-            console.log(err);
+            console.log(`failed upload 1: ${err}`);
             response.body = JSON.stringify({
-              message: "File failed to upload",
+              message: "File failed to upload 1",
               errorMessage: err.message,
             });
             response.statusCode = 500;
@@ -81,9 +82,9 @@ exports.handler = async (event) => {
         await s3Client.send(new UploadCommand(s3Params));
         return url;
       } catch (err) {
-        console.log(err);
+        console.log(`failed upload 1: ${err}`);
         response.body = JSON.stringify({
-          message: "File failed to upload",
+          message: "File failed to upload 2",
           errorMessage: err.message,
         });
         response.statusCode = 500;
